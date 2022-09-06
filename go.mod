@@ -1,4 +1,4 @@
-module fboot
+module github.com/eininst/fiber-boot
 
 go 1.19
 
