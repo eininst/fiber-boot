@@ -1,4 +1,4 @@
-package fboot
+package redoc
 
 import (
 	"encoding/json"
