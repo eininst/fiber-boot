@@ -1,7 +1,9 @@
 package fboot
 
 import (
+	"fmt"
 	"github.com/gofiber/fiber/v2"
+	"strings"
 	"time"
 )
 
@@ -27,9 +29,15 @@ func (a *App) Install(api Api) {
 }
 
 func (a *App) Listen(addr string) {
+	if !strings.HasPrefix(addr, ":") {
+		addr = fmt.Sprintf(":%s", addr)
+	}
 	Listen(a.App, addr)
 }
 
 func (a *App) ListenTLS(addr, certFile, keyFile string, timeout ...time.Duration) {
+	if !strings.HasPrefix(addr, ":") {
+		addr = fmt.Sprintf(":%s", addr)
+	}
 	ListenTLS(a.App, addr, certFile, keyFile, timeout...)
 }
