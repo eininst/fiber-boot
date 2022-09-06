@@ -6,7 +6,7 @@ import (
 
 var graph inject.Graph
 
-func Inject(objects ...any) {
+func Provide(objects ...any) {
 	for _, obj := range objects {
 		err := graph.Provide(&inject.Object{Value: obj})
 		if err != nil {

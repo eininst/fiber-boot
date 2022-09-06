@@ -20,7 +20,8 @@ func New(config ...fiber.Config) *App {
 }
 
 func (a *App) Install(api Api) {
-	Inject(api)
+	//Injector
+	Provide(api)
 	Populate()
 	api.Router(a.App)
 }
